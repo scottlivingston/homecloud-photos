@@ -1,9 +1,22 @@
 [package]
+edition = "2021"
 name = "homecloud-photos"
 version = "0.1.0"
-edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rocket = "0.5.0-rc.1"
+crc32fast = "1.2.1"
+infer = "0.5.0"
+
+[dependencies.uuid]
+features = ["v4", "serde"]
+version = "0.8.2"
+
+[dependencies.rocket]
+features = ["json"]
+version = "0.5.0-rc.1"
+
+[dependencies.rocket_sync_db_pools]
+features = ["sqlite_pool"]
+version = "0.1.0-rc.1"
